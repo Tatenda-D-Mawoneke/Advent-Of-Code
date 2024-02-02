@@ -29,12 +29,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const chai_1 = require("chai");
 const src_1 = require("../src");
 describe("day 1 part 1", () => {
-    it("should multiply two numbers that have added up to 2020 using the example input", () => {
+    it("Should multiply two numbers that have added up to 2020 using the example input", () => {
         const input = [1721, 979, 366, 299, 675, 1456];
         const result = (0, src_1.solvePart1)(Object.assign([], input));
         chai_1.assert.equal(result, 514579);
     });
-    it("should multiply two numbers that have added up to 2020 using the AOC input", () => {
+    it("Should multiply two numbers that have added up to 2020 using the AOC input", () => {
+        // TODO: us fs to read the input data
         const input = [
             1408, 1335, 1648, 1458, 1627, 1928, 1967, 1827, 1606, 1569, 1893, 1866, 1768, 1795,
             1264, 1684, 1552, 1343, 1917, 1675, 1731, 1800, 1413, 1879, 1664, 1350, 1694, 1372,
@@ -56,12 +57,12 @@ describe("day 1 part 1", () => {
     });
 });
 describe("day 1 part 2", () => {
-    it("should multiply three numbers that can add up to 2020 using the example input", () => {
+    it("Should multiply three numbers that can add up to 2020 using the example input", () => {
         const input = [1721, 979, 366, 299, 675, 1456];
         const result = (0, src_1.solvePart2)(Object.assign([], input));
         chai_1.assert.equal(result, 241861950);
     });
-    it("should multiply three numbers that can add up to 2020 using the AOC input", () => {
+    it("Should multiply three numbers that can add up to 2020 using the AOC input", () => {
         const input = [
             1408, 1335, 1648, 1458, 1627, 1928, 1967, 1827, 1606, 1569, 1893, 1866, 1768, 1795,
             1264, 1684, 1552, 1343, 1917, 1675, 1731, 1800, 1413, 1879, 1664, 1350, 1694, 1372,
@@ -81,12 +82,12 @@ describe("day 1 part 2", () => {
         const result = (0, src_1.solvePart2)(Object.assign([], input));
         chai_1.assert.equal(result, 171933104);
     });
-    it("should multiply three numbers that can add up to 2020 using the example input, using recursion", () => {
+    it("Should multiply three numbers that can add up to 2020 using the example input, using recursion", () => {
         const input = [1721, 979, 366, 299, 675, 1456];
         const result = (0, src_1.solvePart2Recursively)(Object.assign([], input));
         chai_1.assert.equal(result, 241861950);
     });
-    it("should multiply three numbers that can add up to 2020 using the AOC input, using recursion", () => {
+    it("Should multiply three numbers that can add up to 2020 using the AOC input, using recursion", () => {
         const input = [
             1408, 1335, 1648, 1458, 1627, 1928, 1967, 1827, 1606, 1569, 1893, 1866, 1768, 1795,
             1264, 1684, 1552, 1343, 1917, 1675, 1731, 1800, 1413, 1879, 1664, 1350, 1694, 1372,

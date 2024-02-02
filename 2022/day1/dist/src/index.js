@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.calorieCounterTopThree = exports.calorieCounter = void 0;
-function calorieCounter(input) {
+exports.solvePart2 = exports.solvePart1 = void 0;
+function solvePart1(input) {
     let highestsum = 0;
     let currentSum = 0;
     for (let index = 0; index < input.length; index++) {
@@ -17,8 +17,8 @@ function calorieCounter(input) {
     }
     return highestsum;
 }
-exports.calorieCounter = calorieCounter;
-function calorieCounterTopThree(input) {
+exports.solvePart1 = solvePart1;
+function solvePart2(input) {
     let totalSum = 0;
     let highestCalorieSums = [0, 0, 0];
     let currentSum = 0;
@@ -29,7 +29,6 @@ function calorieCounterTopThree(input) {
             const indexOfMin = highestCalorieSums.indexOf(min);
             if (currentSum > highestCalorieSums[indexOfMin]) {
                 highestCalorieSums[indexOfMin] = currentSum;
-                console.log(highestCalorieSums);
             }
             currentSum = 0;
             continue;
@@ -41,4 +40,4 @@ function calorieCounterTopThree(input) {
     });
     return totalSum;
 }
-exports.calorieCounterTopThree = calorieCounterTopThree;
+exports.solvePart2 = solvePart2;
