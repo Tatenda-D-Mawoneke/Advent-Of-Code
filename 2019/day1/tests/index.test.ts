@@ -41,7 +41,7 @@ const exampleInput = [12, 14, 1969, 100756];
 const exampleInput2 = [1969]
 const aocInput = addCommaAtEnd(fs.readFileSync("./src/input.txt", "utf-8"));
 
-describe("2019 day 2 part 1", () => {
+describe("2019 day 1 part 1", () => {
 	it("should return the number for the ammount of fuel required given the example input", () => {
 		const result = solvePart1(exampleInput);
 		assert.equal(result, 34241);
@@ -52,7 +52,7 @@ describe("2019 day 2 part 1", () => {
 	});
 });
 
-describe("2019 day 2 part 2", () => {
+describe("2019 day 1 part 2", () => {
 	it("should return the number for the ammount of fuel required given the example input", () => {
 		const result = solvePart2(exampleInput2);
 		assert.equal(result, 966);
