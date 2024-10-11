@@ -1,8 +1,8 @@
-export function numberCalibrator(words: string[]): number {
+export function solvePart1(input: string[]): number {
 	let total: number = 0;
-	for (let i = 0; i < words.length; i++) {
+	for (let i = 0; i < input.length; i++) {
 		let numbers: number[] = [];
-		let currentWord: string = words[i];
+		let currentWord: string = input[i];
 		for (let j = 0; j < currentWord.length; j++) {
 			const num: number = Number(currentWord[j]);
 			if (!isNaN(num)) {
@@ -25,10 +25,10 @@ export function numberCalibrator(words: string[]): number {
 	return total;
 }
 
-export function trueCalibrator(words: string[]) {
+export function solvePart2(input: string[]) {
 	let total: number = 0;
 
-	words.forEach((word, i, words) => {
+	input.forEach((word, i, words) => {
 		let firstNum: number = helper(word, "start");
 		let secondNum: number = helper(word, "end");
 		let num = Number(`${firstNum}${secondNum}`);
