@@ -1,4 +1,4 @@
-export function elfGame(
+export function solvePart1(
 	cubes: { [key: string]: number },
 	games: { [key: string]: string }
 ): number {
@@ -29,7 +29,7 @@ export function elfGame(
 	return gameCount;
 }
 
-export function trueElfGame(games: { [key: string]: string }): number {
+export function solvePart2(games: { [key: string]: string }): number {
 	// let total: number = 0;
 
 	// for (const key in games) {

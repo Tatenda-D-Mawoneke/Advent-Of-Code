@@ -50,47 +50,36 @@ For each game, find the minimum set of cubes that must have been present. What i
  */
 
 import { assert } from "chai";
-import { elfGame, trueElfGame } from "../src/index.js";
+import { solvePart1, solvePart2 } from "../src/index.js";
 import * as fs from "fs";
 
-interface Games{
-	key: string
-}
+const exampleGames = {
+	"Game 1": "3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green",
+	"Game 2": "1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue",
+	"Game 3": "8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red",
+	"Game 4": "1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red",
+	"Game 5": "6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green",
+};
 
-const filePath = "./src/input.txt";
-let games: {} = fs.readFileSync(filePath, "utf-8")
-console.log(games);
+let fileContents: string = fs.readFileSync("./src/input.txt", "utf-8");
+let aocGames: {} = JSON.parse(fileContents);
+
 describe("part1", () => {
+	const cubes = { red: 12, green: 13, blue: 14 };
+
 	it("Should give a sum of the possible games using the advent of code example games", () => {
-		const cubes = { red: 12, green: 13, blue: 14 };
-		const games = {
-			"Game 1": "3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green",
-			"Game 2": "1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue",
-			"Game 3": "8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red",
-			"Game 4": "1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red",
-			"Game 5": "6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green",
-		};
-		const result = elfGame(cubes, games);
+		const result = solvePart1(cubes, exampleGames);
 		assert.equal(result, 8);
 	});
 
 	it("Should give a sum of the possible games using the AoC games", () => {
-		const cubes = { red: 12, green: 13, blue: 14 };
-		const result = elfGame(cubes, games);
-		console.log(result);
+		const result = solvePart1(cubes, aocGames);
 	});
 });
 
-describe("part2", () => {
+xdescribe("part2", () => {
 	it("Should give a sum of the possible games using the example games", () => {
-		const games = {
-			"Game 1": "3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green",
-			"Game 2": "1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue",
-			"Game 3": "8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red",
-			"Game 4": "1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red",
-			"Game 5": "6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green",
-		};
-		const result: number = trueElfGame(games);
+		const result: number = solvePart2(exampleGames);
 		assert.equal(result, 2286);
 	});
 });

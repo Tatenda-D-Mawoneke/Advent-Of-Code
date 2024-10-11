@@ -1,4 +1,4 @@
-export function elfGame(cubes, games) {
+export function solvePart1(cubes, games) {
     let gameCount = 0;
     outerloop: for (let i = 1; i <= Object.keys(games).length; i++) {
         let currentGame = `Game ${i}`;
@@ -24,7 +24,7 @@ export function elfGame(cubes, games) {
     }
     return gameCount;
 }
-export function trueElfGame(games) {
+export function solvePart2(games) {
     // let total: number = 0;
     // for (const key in games) {
     // 	if (Object.prototype.hasOwnProperty.call(games, key)) {
